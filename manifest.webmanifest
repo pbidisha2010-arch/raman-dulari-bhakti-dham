@@ -1,0 +1,11 @@
+{
+  "name": "RAMAN DULARI – Bhakti Dham",
+  "short_name": "RAMAN DULARI",
+  "description": "A Journey of Divine Love with Bidisha Sakhi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1b110d",
+  "theme_color": "#21140f",
+  "orientation": "portrait"
+}
