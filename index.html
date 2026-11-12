@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21140f">
+<link rel="manifest" href="manifest.webmanifest">
+<title>RAMAN DULARI – Bhakti Dham</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#1b110d;
+ color:#fff1d5;
+ font-family:Georgia,serif;
+}
+header{text-align:center;padding:28px 12px}
+h1{color:#e8c477;letter-spacing:3px;font-size:36px}
+header p{color:#e8c477;font-style:italic}
+.hero{padding:10px;text-align:center}
+.hero img{
+ width:100%;max-width:650px;
+ height:300px;object-fit:cover;
+ border-radius:18px;border:2px solid #d5ad63;
+}
+main{max-width:850px;margin:auto;padding:12px}
+section{
+ background:#302017;
+ border:1px solid #987044;
+ border-radius:18px;
+ padding:20px;margin:18px 0;
+}
+h2{text-align:center;color:#e8c477}
+.counter{text-align:center;font-size:38px;color:#e8c477}
+.center{text-align:center}
+button{
+ background:#e8c477;color:#21140f;
+ border:0;border-radius:25px;
+ padding:12px 22px;margin:5px;
+ font-weight:bold;font-size:16px;
+}
+.video{margin:18px 0}
+.video iframe{
+ width:100%;aspect-ratio:16/9;
+ border:0;border-radius:12px;
+}
+.video a{color:#e8c477}
+footer{
+ text-align:center;color:#e8c477;
+ padding:28px 10px;line-height:2;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>RAMAN DULARI</h1>
+<p>Bhakti Dham</p>
+<p>A Journey of Divine Love with Bidisha Sakhi</p>
+</header>
+
+<div class="hero">
+<img src="https://raw.githubusercontent.com/pbidisha2010-arch/-/main/radha_raman_darshan.jpg"
+alt="Shri Radharaman Ji">
+</div>
+
+<main>
+
+<section id="jaap">
+<h2>🌸 Radha Naam Jaap 🌸</h2>
+<p class="center">श्री राधे राधे</p>
+<div class="counter" id="count">0 / 108</div>
+<div class="center">
+<button onclick="jaap()">राधे राधे 🙏</button>
+<button onclick="resetJaap()">Reset</button>
+</div>
+<p class="center">108 नाम जप पूर्ण करें।</p>
+</section>
+
+<section id="bhajan">
+<h2>🎶 Bhajan & Kirtan</h2>
+<div id="bhajans"></div>
+</section>
+
+<section id="katha">
+<h2>🙏 Gurudev Katha</h2>
+<div id="kathas"></div>
+</section>
+
+<section id="podcast">
+<h2>🎧 Devotional Podcast</h2>
+<div id="podcasts"></div>
+</section>
+
+</main>
+
+<footer>
+श्री राधारमणो विजयते 🌸<br>
+गुरु कृपा ही केवलम् 🙏
+</footer>
+
+<script>
+let count=0;
+
+function jaap(){
+ if(count<108) count++;
+ document.getElementById("count").innerText=count+" / 108";
+ if(count===108) alert("श्री राधे! 108 नाम जप पूर्ण हुए 🙏");
+}
+
+function resetJaap(){
+ count=0;
+ document.getElementById("count").innerText="0 / 108";
+}
+
+function video(id,title){
+ return '<div class="video"><h3>'+title+'</h3>'+
+ '<iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/'+id+'" allowfullscreen></iframe>'+
+ '<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v='+id+'">YouTube पर खोलें ↗</a></p></div>';
+}
+
+function playlist(id,title){
+ return '<div class="video"><h3>'+title+'</h3>'+
+ '<iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/videoseries?list='+id+'" allowfullscreen></iframe>'+
+ '<p><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list='+id+'">पूरी Playlist खोलें ↗</a></p></div>';
+}
+
+const bhajans=[
+"D688rg796a0","xDMQJYYu9_U","t1YcCnAykzU",
+"NtojMn5ZMlA","k5cal86VrU8","6hE8pIKfKxY",
+"F8y9kUP8MB4","iOyTfT4mQu8","mO6uAf0bfIY",
+"n7gsTx_PfqY"
+];
+
+document.getElementById("bhajans").innerHTML=
+bhajans.map((id,i)=>video(id,"Bhajan & Kirtan "+(i+1))).join("");
+
+const kathas=[
+["lfxRxUJw2hM","Gurudev Katha"],
+["f6IbmzPTREg","Gurudev Katha"],
+["PLeZY7OOX7AW7vu5H3aHSjLDMFB2bEbaZL","Katha Playlist 1"],
+["PLeZY7OOX7AW5KJZ0hps_noxE_7H3KGxzH","Katha Playlist 2"],
+["PLeZY7OOX7AW7Ip6nDBh8XvPw1hbscGA4W","Katha Playlist 3"],
+["PLeZY7OOX7AW4gcCKNZ_dcIB2f4pAhRO4i","Katha Playlist 4"],
+["PLeZY7OOX7AW6oj9dwP5ZXHkDfNQ-KVUxr","Katha Playlist 5"],
+["PLeZY7OOX7AW6q6exgpvn7BH94AtR_CQSM","Katha Playlist 6"],
+["PLZw-Ag_5KZ9o","Katha Playlist 7"],
+["PLYqkBDWbaq4c","Katha Playlist 8"],
+["PLTMGoI3aT-lE","Katha Playlist 9"]
+];
+
+document.getElementById("kathas").innerHTML=
+kathas.map(item=>
+ item[0].startsWith("PL")?
+ playlist(item[0],item[1]):
+ video(item[0],item[1])
+).join("");
+
+document.getElementById("podcasts").innerHTML=
+playlist("PLMtkLbRMaCNk","Devotional Podcast");
+</script>
+
+</body>
+</html>
